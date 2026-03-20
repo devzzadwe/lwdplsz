@@ -97,15 +97,22 @@ end
 
 local Summonconfig = require(ReplicatedStorage.Modules.SummonableBossConfig)
 local SummonBossList = {}
-
+for i, v in next, Summonconfig.Bosses do
+    SummonBossList[#SummonBossList+1] = (v.displayName:gsub("%s+", ""))
+end
 
 local bossconfig = require(ReplicatedStorage.Modules.BossConfig)
 local BossList = {}
+for i, v in next, bossconfig.Bosses do
+    BossList[#BossList+1] = (v.displayName:gsub("%s+", ""))
+end
 
 
 local Dungeonconfig = require(ReplicatedStorage.Modules.DungeonConfig)
 local DungeonList = {}
-
+for i, v in next, Dungeonconfig.Dungeons do
+    DungeonList[#DungeonList+1] = (v.DisplayName:gsub("%s+", ""))
+end
 if not task then
     task = {}
     task.wait = wait
